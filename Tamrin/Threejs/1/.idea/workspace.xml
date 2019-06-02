@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4a3bd6f9-f35a-4a6f-af44-19f656dbfd07" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="HW7.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HW7.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1-3d shape.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1-3d shape.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1224">
+              <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5-texture - Copy.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5-texture - Copy.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1632">
+              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2-tween.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2-tween.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>src</find>
+      <find>audioLoader</find>
+      <find>sound</find>
+      <find>liste</find>
+      <find>buffersize</find>
+      <find>frame-main-2</find>
+      <find>game</find>
+      <find>body</find>
+      <find>desert-texture</find>
+      <find>lh</find>
+      <find>map</find>
+      <find>init();</find>
+      <find>point</find>
+      <find>desert</find>
+      <find>pointLight</find>
+      <find>camera.add( listener );</find>
+      <find>sphereX</find>
+      <find>0x</find>
+      <find>GROUP</find>
+      <find>group</find>
+      <find>soundX.setRefDistance</find>
+      <find>fog</find>
+      <find>text</find>
+      <find>light</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../../2 WebGL/2 Programs/4/lesson04/index.html" />
+        <option value="$PROJECT_DIR$/scene 11 Shadow.html" />
+        <option value="$PROJECT_DIR$/scene 11 Shadow - Copy.html" />
+        <option value="$PROJECT_DIR$/scene 1_2_3 Material &amp; Transform &amp; Animation - Copy.html" />
+        <option value="F:/New folder (2)/scene 11 Shadow - Copy - Copy.html" />
+        <option value="$PROJECT_DIR$/0_Skeleton - Copy.html" />
+        <option value="$PROJECT_DIR$/scene 9 Texture.html" />
+        <option value="$PROJECT_DIR$/scene 6 light.html" />
+        <option value="$PROJECT_DIR$/training_6.html" />
+        <option value="$PROJECT_DIR$/0_Skeleton - Copy - Copy.html" />
+        <option value="$PROJECT_DIR$/cube.html" />
+        <option value="$PROJECT_DIR$/../../CG WebGL and ThreeJS-962 USC/3 ThreeJS/Programs/0_Skeleton - Copy - Copy.html" />
+        <option value="$PROJECT_DIR$/5-texture - Copy.html" />
+        <option value="$PROJECT_DIR$/1-3d shape.html" />
+        <option value="$PROJECT_DIR$/HW7.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="audio&#9;null&#9;null&#10;sound&#9;null&#9;null&#10;jquery&#9;FILE&#9;file://E:/graphic/CG WebGL and ThreeJS-962 USC/3 ThreeJS/Programs/collision/js/jquery-ui.js&#10;dragstart&#9;null&#9;null&#10;zoom in&#9;null&#9;null&#10;setting&#9;ACTION&#9;Database.Settings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="E:/Graphic/Practice 12" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a3bd6f9-f35a-4a6f-af44-19f656dbfd07" name="Default" comment="" />
+      <created>1524253533040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524253533040</updated>
+      <workItem from="1524253535609" duration="831000" />
+      <workItem from="1524255364358" duration="676000" />
+      <workItem from="1524256536178" duration="23000" />
+      <workItem from="1527573764561" duration="662000" />
+      <workItem from="1527574448224" duration="1806000" />
+      <workItem from="1527576450255" duration="1172000" />
+      <workItem from="1527578556823" duration="2020000" />
+      <workItem from="1527581345156" duration="1943000" />
+      <workItem from="1527583400051" duration="1548000" />
+      <workItem from="1527586501825" duration="1806000" />
+      <workItem from="1527589129014" duration="1802000" />
+      <workItem from="1527591375349" duration="2129000" />
+      <workItem from="1527593574509" duration="483000" />
+      <workItem from="1527594089171" duration="1795000" />
+      <workItem from="1527595943690" duration="2023000" />
+      <workItem from="1527598005607" duration="1698000" />
+      <workItem from="1527600428268" duration="1909000" />
+      <workItem from="1527602367725" duration="2007000" />
+      <workItem from="1527604397869" duration="1879000" />
+      <workItem from="1527606322576" duration="1837000" />
+      <workItem from="1527608201555" duration="1809000" />
+      <workItem from="1527610052703" duration="647000" />
+      <workItem from="1527795550461" duration="1817000" />
+      <workItem from="1527797628962" duration="1305000" />
+      <workItem from="1527801003337" duration="1418000" />
+      <workItem from="1527802836957" duration="1879000" />
+      <workItem from="1527806532648" duration="1800000" />
+      <workItem from="1527808426841" duration="1891000" />
+      <workItem from="1527810421464" duration="1651000" />
+      <workItem from="1527812406412" duration="1642000" />
+      <workItem from="1527858657904" duration="73000" />
+      <workItem from="1527860148639" duration="1423000" />
+      <workItem from="1527871166286" duration="1072000" />
+      <workItem from="1527872932600" duration="1820000" />
+      <workItem from="1527879406548" duration="1472000" />
+      <workItem from="1558159113431" duration="1893000" />
+      <workItem from="1558161322894" duration="125000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="53786000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/0_Skeleton - Copy.html" />
+    <entry file="file://F:/New folder (2)/scene 11 Shadow - Copy - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/0_Skeleton - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 1_2_3 Material &amp; Transform &amp; Animation.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow.html" />
+    <entry file="file://$PROJECT_DIR$/scene 1_2_3 Material &amp; Transform &amp; Animation - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 4 Grouping Objects.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/0_Skeleton - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow.html" />
+    <entry file="file://$PROJECT_DIR$/../../2 WebGL/2 Programs/4/lesson04/index.html" />
+    <entry file="file://$PROJECT_DIR$/../../2 WebGL/2 Programs/4/lesson04/index.html" />
+    <entry file="file://$PROJECT_DIR$/collision/css/jquery-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="1115" column="1" lean-forward="false" selection-start-line="1115" selection-start-column="1" selection-end-line="1115" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 1_2_3 Material &amp; Transform &amp; Animation - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/scene 1_2_3 Material &amp; Transform &amp; Animation.html" />
+    <entry file="file://$PROJECT_DIR$/0_Skeleton - Copy.html" />
+    <entry file="file://F:/New folder (2)/scene 8 InterAction3D.html" />
+    <entry file="file://F:/New folder (2)/scene 11 Shadow - Copy - Copy.html" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/ming.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="322" column="6" lean-forward="false" selection-start-line="322" selection-start-column="6" selection-end-line="322" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="42870" column="4" lean-forward="false" selection-start-line="42870" selection-start-column="4" selection-end-line="42870" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collision/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="42870" column="4" lean-forward="false" selection-start-line="42870" selection-start-column="4" selection-end-line="42870" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/main proje/graphic/graf/Threejs Selected projects/3 Ali Eftekhar-Saman Rouhanizadeh- Warrior Spaceship/Warrior Spaceship/index.html" />
+    <entry file="file://G:/main proje/graphic/graf/Threejs Selected projects/2 Moin Mohammadian-Space Tetrix/game.html" />
+    <entry file="file://$PROJECT_DIR$/scene 7 Camera.html" />
+    <entry file="file://$PROJECT_DIR$/scene 6 light.html" />
+    <entry file="file://$USER_HOME$/Downloads/Telegram Desktop/3DSound.html" />
+    <entry file="file://$PROJECT_DIR$/training_6.html" />
+    <entry file="file://$PROJECT_DIR$/scene 8 InterAction3D.html" />
+    <entry file="file://$PROJECT_DIR$/Scene 14 Equalizer.html" />
+    <entry file="file://$PROJECT_DIR$/scene 12 Shader.html" />
+    <entry file="file://$PROJECT_DIR$/scene 11 Shadow.html" />
+    <entry file="file://$PROJECT_DIR$/scene 10 ParticleSystem.html" />
+    <entry file="file://$PROJECT_DIR$/scene 9 Texture.html" />
+    <entry file="file://$PROJECT_DIR$/scene 4 Grouping Objects.html" />
+    <entry file="file://$PROJECT_DIR$/0_Skeleton - Copy - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/cube.html" />
+    <entry file="file://$PROJECT_DIR$/collision/js/jquery-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37179">
+          <caret line="2190" column="28" lean-forward="false" selection-start-line="2190" selection-start-column="28" selection-end-line="2190" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3DSound.html" />
+    <entry file="file://$PROJECT_DIR$/2-tween.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5-texture - Copy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../CG WebGL and ThreeJS-962 USC/3 ThreeJS/Programs/0_Skeleton - Copy - Copy.html" />
+    <entry file="file://$PROJECT_DIR$/1-3d shape.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/پریا رضایی فرد/T8/HW8.html" />
+    <entry file="file://$PROJECT_DIR$/HW7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T2</title>
+</head>
+<body>
+
+    <script type="text/javascript" src="lib/three.js"></script>
+    <script type="text/javascript" src="lib/Tween.js"></script>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/ShadowMapViewer.js"></script>
+    <script type="text/javascript" src="lib/OrbitControls.js"></script>
+     <script type="text/javascript" src="lib/HDRCubeTextureLoader.js"></script>
+    <script type="text/javascript" src="lib/OBJLoader.js"></script>
+    <script type="text/javascript" src="lib/DragControls.js"></script>
+
+
+<script>
+
+
+			var scene = new THREE.Scene();
+
+			  //  Interaction Variables
+            var rayCaster = new THREE.Raycaster();
+            var mouse = new THREE.Vector2(), SELECTED; // Vector2 is a class that has 2 properties(vectors): x,y.
+            var  currentColor, controls;
+            var objects = [];
+
+
+
+
+			var camera = new THREE.PerspectiveCamera( 90, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setClearColor(new THREE.Color(0x000000));
+
+			  renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+			document.body.appendChild( renderer.domElement );
+
+            // scene.fog = new THREE.Fog(0xffffff, 10,1500);
+
+             //  Cube mapping second method
+        var reflectionCube = new THREE.CubeTextureLoader()
+            .setPath('cube/Park/')
+            .load(['posx.jpg', 'negx.jpg', 'posy.jpg', 'negy.jpg', 'posz.jpg', 'negz.jpg']);
+        reflectionCube.format = THREE.RGBFormat;
+        scene.background = reflectionCube;
+
+
+
+            //  Mouse control
+            var controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.addEventListener('change', renderer);
+
+            //  Remove when using animation loop
+            //  Enable animation loop when using damping or authorisation
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.enableZoom = false;
+
+
+            //ball
+            var ball = new THREE.ObjectLoader();
+            ball.load("model/ball/football-soccer-ball.json", function (obj2) {
+                obj2.traverse(function (mesh) {
+                    if (mesh instanceof THREE.Mesh) {
+
+                        objects.push(mesh);
+                    }
+                    obj2.position.y = 20;
+                    obj2.position.z = 30;
+                    obj2.position.x = -85;
+                    obj2.scale.set(0.2, 0.2, 0.2);
+                    scene.add(obj2);
+
+                });
+            });
+
+
+
+                var dragControls = new THREE.DragControls(objects, camera, renderer.domElement);
+                dragControls.addEventListener('dragstart', function (event) {
+                    controls.enabled = false;
+                });
+                dragControls.addEventListener('dragend', function (event) {
+                    controls.enabled = true;
+                });
+
+                renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
+                renderer.domElement.addEventListener('mouseup', onDocumentMouseUp, false);
+
+
+                function onDocumentMouseDown(event) {
+
+                    event.preventDefault();
+
+                    //  Normalize mouse positions
+                    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                    rayCaster.setFromCamera(mouse, camera);
+
+                    //  Get all the objects mouse is hovering on
+                    var intersects = rayCaster.intersectObjects(objects);
+                    if (intersects.length > 0) {
+                        //Do something to the nearest object that mouse is hovering on
+                        SELECTED = intersects[0].object;
+                        currentColor = SELECTED.material.color.getHex();
+                        SELECTED.material.color.setHex(0xffff00);
+                    }
+                }
+
+                function onDocumentMouseUp(event) {
+
+                    event.preventDefault();
+                    //  Clear the selected object when mouse key is released
+                    SELECTED.material.color.setHex(currentColor);
+                    SELECTED = null;
+                }
+
+
+                ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+                scene.add(ambientLight);
+
+                var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+                // directionalLight.target = body;
+                directionalLight.position.set(0, 40, 0);
+
+                scene.add(directionalLight);
+
+                var geometry = new THREE.Geometry();
+             var textureLoader = new THREE.TextureLoader();
+
+                var sprite1 = textureLoader.load("texture/snowflake1.png");
+                var sprite2 = textureLoader.load("texture/snowflake2.png");
+                var sprite3 = textureLoader.load("texture/snowflake3.png");
+                var sprite4 = textureLoader.load("texture/snowflake4.png");
+                var sprite5 = textureLoader.load("texture/snowflake5.png");
+                var sprite6 = textureLoader.load("texture/snow.png");
+
+        for (var i = 0; i < 10000; i++) {
+
+            var vertex = new THREE.Vector3();
+            vertex.x = Math.random() * 2000 - 1000;
+            vertex.y = Math.random() * 2000 - 1000;
+            vertex.z = Math.random() * 2000 - 1000;
+             geometry.vertices.push(vertex);
+        }
+
+        var parameters = [
+            // [[Color in HSL], texture, size
+            [[1.0, 0.2, 0.5], sprite2, 7],
+            [[0.95, 0.1, 0.5], sprite3, 11],
+            [[0.90, 0.05, 0.5], sprite1, 10],
+            [[0.85, 0, 0.5], sprite5, 8],
+            [[0.80, 0, 0.5], sprite4, 5],
+            [[0.75, 0, 0.5], sprite6, 5]
+        ];
+
+        for (i = 0; i < parameters.length; i++) {
+
+           var  color = parameters[i][0];
+            var sprite = parameters[i][1];
+            var size = parameters[i][2];
+
+
+            var materials = [];
+            materials[i] = new THREE.PointCloudMaterial({
+                size: size,
+                map: sprite,
+                blending: THREE.AdditiveBlending,
+                depthTest: false,
+                transparent: true
+            });
+
+            materials[i].color.setHSL(color[0], color[1], color[2]);
+
+           var particles = new THREE.Points(geometry, materials[i]);
+            particles.rotation.x = Math.random() * 6;
+            particles.rotation.y = Math.random() * 6;
+            particles.rotation.z = Math.random() * 6;
+            scene.add(particles);
+            renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onDocumentMouseMove(event) {
+
+        event.preventDefault();
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+
+                //animate
+                var animate = function () {
+                    requestAnimationFrame(animate);
+                    renderer.render(scene, camera);
+
+                    var time = Date.now() * 0.00005;
+                    camera.position.z += 0.001;
+                    camera.position.y += 0.0001;
+
+
+                for (i = 0; i < scene.children.length; i++) {
+
+                    var object = scene.children[i];
+                    if (object instanceof THREE.Points) {
+                        object.rotation.y = time * ( i < 400 ? i + 1 : -( i + 1 ) );
+                    }
+                }
+
+                    // scene.rotation.y += 0.001;
+
+
+                    // TWEEN.update();
+
+                };
+                camera.position.set(10, 80, 150);
+
+                // camera.position.z =30;
+                // camera.position.y = -8;
+
+                animate();
+
+
+
+
+    </script>
+
+</body>
+</html>

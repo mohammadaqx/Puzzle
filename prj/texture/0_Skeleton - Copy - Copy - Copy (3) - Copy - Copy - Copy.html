@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baghestani-Karimabadi</title>
+    <script type="text/javascript" src="lib/three.js"></script>
+    <style>
+      body {
+
+              @include display(flex);
+              @include align-content(center);
+                  color: #353535;
+                  min-height: 100vh;
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 14px;
+                  text-align: center;
+                  background-color: lightgreen;
+                  margin: 0 auto;
+                  overflow: hidden;
+              }
+
+              .center {
+                  position: absolute;
+                  left: 0%;
+                  top: 0%;
+                  transform: translate(-50%, -50%);
+                  -ms-transform: translate(-50%, -50%);
+
+                  -webkit-transform: translate(-50%, -50%);
+                  width: 800px;
+                  height: 550px;
+              }
+
+
+
+
+
+              #web-gl {
+                  margin-left: 190px;
+                  padding-top: 16px;
+                  width: 2000px;
+                  height: 2000px;
+              }
+
+
+              body {
+                  background: url("texture/Brick-Texture.jpg");
+                  background-origin: content-box;
+                  background-size: cover;
+                  position: relative;
+
+              }
+
+              .score {
+                  position: relative;
+                  text-align: left;
+                  margin-left: 200px;
+                  padding-top: 32px;
+              }
+
+              .score > p {
+                  font-size: 30px;
+                  font-weight: bold;
+                  color: white;
+              }
+
+
+          </style>
+</head>
+
+<body>
+
+
+
+
+
+
+<div id="WebGL-output">
+</div>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/three.js"></script>
+<script type="text/javascript" src="lib/OrbitControls.js"></script>
+
+<script type="text/javascript" src="lib/howler.core.js"></script>
+
+<script type="text/javascript" src="lib/howler.effects.min.js"></script>
+<script type="text/javascript" src="lib/TrackballControls.js"></script>
+
+        <script>
+    var scene, camera, renderer;
+
+     var mesh1,mesh2,mesh3,mesh4,mesh5,mesh6,mesh7,mesh8,mesh10,mesh9,mesh11,mesh12;
+
+
+
+   init();
+    animate();
+
+
+    // once everything is loaded, we run our Three.js stuff.
+    function init() {
+
+        // create a scene, that will hold all our elements such as objects, cameras and lights.
+        scene = new THREE.Scene();
+
+        // create a camera, which defines where we're looking at.
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        // create a render and set the size
+        renderer = new THREE.WebGLRenderer({antialias: true});
+
+        renderer.setClearColor(new THREE.Color(0xF5F5F5 ));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+
+
+        //sound
+        /*
+        var listener = new THREE.AudioListener();
+        camera.add(listener);
+        audioLoader = new THREE.AudioLoader();
+*/
+//LIGHT
+        var spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.angle = 0.8;
+        spotLight.penumbra = 0.05;
+    //    spotLight.target.position = surfaceMesh.position;
+        spotLight.position.set(0, 60, 20);
+        scene.add(spotLight.clone());
+
+
+
+
+
+        //  1 ROW
+
+        //CUBE1
+        var texture = new THREE.TextureLoader().load( 'texture/1.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh1 = new THREE.Mesh( geometry, material );
+        mesh1.castShadow = true;
+        mesh1.receiveShadow  = true;
+        mesh1.phiStart = 10;
+        scene.add( mesh1 );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        document.body.appendChild( renderer.domElement );
+        window.addEventListener( 'resize', onWindowResize, false );
+        mesh1.position.set(25,10,20);
+
+        uniforms = {
+           time: {value: 1.0},
+           resolution: {value: new THREE.Vector2()}
+        };
+
+        //CUBE2
+        var texture = new THREE.TextureLoader().load( 'texture/2.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh2 = new THREE.Mesh( geometry, material );
+        scene.add( mesh2 );
+        mesh2.position.set(-5,10,20);
+
+
+        //CUBE3
+        var texture = new THREE.TextureLoader().load( 'texture/3.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh3 = new THREE.Mesh( geometry, material );
+        scene.add( mesh3 );
+        mesh3.position.set(-35,10,20);
+
+
+         // 2 ROW
+
+
+        //CUBE4
+        var texture = new THREE.TextureLoader().load( 'texture/4.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh4 = new THREE.Mesh( geometry, material );
+        scene.add( mesh4 );
+        mesh4.position.set(25,-20,20);
+
+
+        //CUBE5
+        var texture = new THREE.TextureLoader().load( 'texture/5.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh5 = new THREE.Mesh( geometry, material );
+        scene.add( mesh5 );
+        mesh5.position.set(-5,-20,20);
+
+
+        //CUBE6
+        var texture = new THREE.TextureLoader().load( 'texture/6.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh6 = new THREE.Mesh( geometry, material );
+        scene.add( mesh6 );
+        mesh6.position.set(-35,-20,20);
+
+
+        // 3 ROW
+
+
+        //CUBE7
+        var texture = new THREE.TextureLoader().load( 'texture/7.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh7 = new THREE.Mesh( geometry, material );
+        scene.add( mesh7 );
+        mesh7.position.set(25,-50,20);
+
+
+        //CUBE8
+        var texture = new THREE.TextureLoader().load( 'texture/8.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh8 = new THREE.Mesh( geometry, material );
+        scene.add( mesh8 );
+        mesh8.position.set(-5,-50,20);
+
+
+        //CUBE9
+        var texture = new THREE.TextureLoader().load( 'texture/9.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh9 = new THREE.Mesh( geometry, material );
+        scene.add( mesh9 );
+        mesh9.position.set(-35,-50,20);
+
+
+
+        //PICTURE
+        var texture = new THREE.TextureLoader().load( 'texture/CC.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 50, 50, 0 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh10 = new THREE.Mesh( geometry, material );
+        scene.add( mesh10 );
+        mesh10.position.set(-4,50,20);
+
+
+
+        //CUBEpuzzle
+        var texture = new THREE.TextureLoader().load( 'texture/CTP.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh11 = new THREE.Mesh( geometry, material );
+        scene.add( mesh11);
+        mesh11.position.set(100,50,10);
+
+        //CUBEpuzzle
+        var texture = new THREE.TextureLoader().load( 'texture/CTP.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+        mesh12 = new THREE.Mesh( geometry, material );
+        scene.add( mesh12 );
+        mesh12.position.set(-105,50,10);
+
+
+
+/*
+
+        group = new THREE.Group();
+        mesh12.add(mesh11);
+        group.add(mesh12);
+        scene.add(group);
+
+*/
+
+
+
+        /*
+
+
+                //Receive a sound code and play it
+                function playSound(code) {
+                    switch (code) {
+                        case 1:
+                        {
+                            if (soundSwitchCycle.isPlaying == false)
+                                soundSwitchCycle.play();
+                            break;
+                        }
+                    }
+                }
+
+
+        */
+
+
+
+        //SOUND
+/*
+        soundX = new THREE.Audio(listener);
+        audioLoader.load('sound/soundx.mp3', function (buffer) {
+            soundX.setBuffer(buffer);
+            soundX.play();
+        });
+
+        audioAnalyser = new THREE.AudioAnalyser(soundX, bufferSize);
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+        //position
+        camera.position.set(50,150,-800);
+        camera.lookAt(new THREE.Vector3(-80,60.0));
+        document.getElementById("WebGL-output").appendChild(renderer.domElement);
+        controls = new THREE.OrbitControls( camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.25;
+        controls.enableZoom = true;
+
+
+        //  Surface Texture
+
+        texture = THREE.ImageUtils.loadTexture('texture/0801.jpg');
+       texture.repeat.set(4, 1);
+       texture.wrapS = THREE.RepeatWrapping;
+       texture.wrapT = THREE.RepeatWrapping;
+
+       // texture.magFilter = THREE.NearestFilter;
+        //texture.minFilter = THREE.LinearMipMapLinearFilter;
+
+
+
+        //Surface Mesh
+        surface = new THREE.PlaneGeometry(7000, 7000);
+
+        surfaceMaterial = new THREE.MeshPhongMaterial({color: 0xcccccc, side: THREE.DoubleSide, map: texture});
+        surfaceMesh = new THREE.Mesh(surface, surfaceMaterial);
+        surfaceMesh.rotateX(Math.PI / 2);
+        surfaceMesh.position.y = -70;
+        surfaceMesh.position.z = -300;
+        scene.add(surfaceMesh);
+
+
+
+
+        //Surface
+       /* var surfaceGeometry = new THREE.PlaneGeometry(1600,1650);
+        var surfaceMaterial = new THREE.MeshBasicMaterial({color: 0xCCFFFF, side: THREE.DoubleSide});
+        var surfaceMesh = new THREE.Mesh(surfaceGeometry, surfaceMaterial);
+        surfaceMesh.rotateX(Math.PI / 2);
+        surfaceMesh.position.y = -70;
+        scene.add(surfaceMesh);
+*/
+
+
+
+        //light
+        // add subtle ambient lighting
+ var ambiColor = "#ffffff";
+ var ambientLight = new THREE.AmbientLight(ambiColor);
+ scene.add(ambientLight);
+
+
+
+
+        // position and point the camera to the center of the scene
+        camera.position.set(-1,0,-200);
+        camera.lookAt(scene.position);
+
+        // add the output of the renderer to the html element
+
+        document.getElementById("WebGL-output").appendChild(renderer.domElement);
+      /*  var audioLoader = new THREE.AudioLoader();
+
+//sound
+        var soundX = new THREE.PositionalAudio(listener);
+        audioLoader.load('sound/12.MP3',function (buffer) {
+            soundX.setBuffer( buffer );
+            soundX.setRefDistance( 15 );
+            soundX.play();
+        });
+        sphereX.add(soundX);
+*/
+
+
+
+
+
+
+
+    }
+
+
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+
+
+    function animate() {
+
+        // render the scene
+        renderer.render(scene, camera);
+        controls.update();
+        uniforms.time.value +=1;
+        requestAnimationFrame(animate);
+
+        var t =(Date.now()/1000);
+
+        var listener = new THREE.AudioListener();
+        camera.add( listener );
+
+
+/*
+         requestAnimationFrame( animate );
+         mesh11.rotation.x += 0.005;
+         mesh11.rotation.y += 0.01;
+         renderer.render( scene, camera );
+
+        requestAnimationFrame( animate );
+        mesh12.rotation.x += 0.005;
+        mesh12.rotation.y += 0.01;
+        renderer.render( scene, camera );
+
+*/
+    }
+
+</script>
+</body>
+</html>

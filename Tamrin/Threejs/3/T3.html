@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow Three.js practice</title>
+</head>
+<body>
+    <script type="text/javascript" src="lib/three.js"></script>
+    <script type="text/javascript" src="lib/Tween.js"></script>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/ShadowMapViewer.js"></script>
+
+ <script>
+            var spotLight;
+            var group = new THREE.Group();
+			var scene = new THREE.Scene();
+			scene.add(group);
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setClearColor(new THREE.Color(0xADD8E6));
+
+			  renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+			document.body.appendChild( renderer.domElement );
+
+
+			 //road
+             var road = new THREE.PlaneGeometry(300,300);
+             var roadmaterial = new THREE.MeshPhongMaterial({color: 0x7cfc00, side: THREE.DoubleSide});
+             var roadmesh = new THREE.Mesh(road, roadmaterial);
+             road.rotateX(Math.PI / 2);
+             roadmesh.position.y = -25;
+             roadmesh.receiveShadow = true;
+             scene.add(roadmesh);
+
+               //  Add Spotlight
+            spotLight = new THREE.SpotLight(0xFFEFD5);
+            spotLight.angle = Math.PI /3;
+            spotLight.penumbra = 0.3;
+            spotLight.position.set(0, 50, 19);
+            spotLight.castShadow = true;
+            spotLight.shadow.camera.near = 8;
+            spotLight.shadow.camera.far = 30;
+            spotLight.shadow.mapSize.width = 1024;
+            spotLight.shadow.mapSize.height = 1024;
+            roadmesh.add(spotLight);
+            //   var spotLightHelper = new THREE.SpotLightHelper( spotLight );
+            // roadmesh.add( spotLightHelper );
+
+            //Threebody
+            var bodygeometry = new THREE.CylinderGeometry(0.5, 0.5, 3.25, 22 );
+            var bodymaterial = new THREE.MeshBasicMaterial( {color: 0x8B4513} );
+            var body = new THREE.Mesh(bodygeometry, bodymaterial );
+            scene.add( body );
+            body.position.y =-11.25;
+            body.position.z =10;
+            body.position.x =3.5;
+
+            //leaf1
+            var leaf1geometry = new THREE.ConeGeometry( 10, 5, 22 );
+            var leaf1material = new THREE.MeshPhongMaterial( {color: 0x228B22} );
+            var leaf1 = new THREE.Mesh( leaf1geometry, leaf1material );
+            scene.add( leaf1 );
+            leaf1.position.x = 6;
+            leaf1.position.y =-8;
+            leaf1.position.z = -10;
+
+            //leaf2
+             var leaf2geometry = new THREE.ConeGeometry( 10, 5, 22 );
+            var leaf2material = new THREE.MeshPhongMaterial( {color: 0x228B22} );
+            var leaf2 = new THREE.Mesh( leaf2geometry, leaf2material );
+            scene.add( leaf2 );
+            leaf2.position.x = 6;
+            leaf2.position.y =-5;
+            leaf2.position.z = -10;
+
+            //leaf3
+             var leaf3geometry = new THREE.ConeGeometry( 10, 5, 22 );
+            var leaf3material = new THREE.MeshPhongMaterial( {color: 0x228B22} );
+            var leaf3 = new THREE.Mesh( leaf3geometry, leaf3material );
+            scene.add( leaf3 );
+            leaf3.position.x = 6;
+            leaf3.position.y =-2;
+            leaf3.position.z = -10;
+
+
+
+
+
+            //hat
+            var hatgeometry = new THREE.ConeGeometry(2, 10, 32 );
+            var hatmaterial = new THREE.MeshPhongMaterial( {color: 0x00FF7F} );
+            var hatcone = new THREE.Mesh( hatgeometry, hatmaterial );
+            scene.add( hatcone );
+            hatcone.position.y = 1;
+            hatcone.position.x = -20;
+            hatcone.position.z = -15;
+            hatcone.castShadow = true;
+
+            //head
+            var headgeometry = new THREE.SphereGeometry(2.5,30,32);
+            var headmaterial = new THREE.MeshPhongMaterial( {color: 0xf4a460} );
+            var headsphere = new THREE.Mesh( headgeometry, headmaterial );
+            scene.add( headsphere );
+            headsphere.position.y = -5;
+            headsphere.position.x = -20;
+            headsphere.position.z = -15;
+            headsphere.castShadow = true;
+
+            //neck
+            var neckgeometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 32 );
+            var neckmaterial = new THREE.MeshPhongMaterial( {color: 0xd2b48c} );
+            var neckcylinder = new THREE.Mesh( neckgeometry, neckmaterial );
+            scene.add( neckcylinder );
+            neckcylinder.position.y =-8;
+            neckcylinder.position.x =-20;
+            neckcylinder.position.z =-15;
+            neckcylinder.castShadow = true;
+
+
+
+            //body
+            var bodygeometry = new THREE.CylinderGeometry( 2,3, 7, 40 );
+            var bodymaterial = new THREE.MeshPhongMaterial( {color: 0xADFF2F} );
+            var bodylinder = new THREE.Mesh( bodygeometry, bodymaterial );
+            scene.add( bodylinder );
+            bodylinder.position.y = -12;
+            bodylinder.position.x = -20;
+            bodylinder.position.z = -15;
+            body.castShadow = true;
+
+
+            //lefthand
+            var lefthandgeometry = new THREE.CylinderGeometry( 1, 1, 6, 32 );
+            var lefthandmaterial = new THREE.MeshPhongMaterial( {color: 0xf4a460} );
+            var lefthandcylinder = new THREE.Mesh( lefthandgeometry, lefthandmaterial );
+            scene.add( lefthandcylinder );
+            lefthandcylinder.rotateZ (Math.PI / 3);
+            lefthandcylinder.position.x = -24.5;
+            lefthandcylinder.position.y =-10;
+            lefthandcylinder.position.z =-15;
+            lefthandcylinder.castShadow = true;
+
+
+            //righthand
+            var righthandgeometry = new THREE.CylinderGeometry( 1, 1, 6, 32 );
+            var righthandmaterial = new THREE.MeshPhongMaterial( {color: 0xf4a460} );
+            var righthandcylinder = new THREE.Mesh( righthandgeometry, righthandmaterial );
+            scene.add( righthandcylinder );
+            righthandcylinder.rotateZ (-Math.PI / 3);
+            righthandcylinder.position.x = -15.5;
+            righthandcylinder.position.y =-10;
+            righthandcylinder.position.z =-15;
+            righthandcylinder.castShadow = true;
+
+
+            //rightfoot
+            var rightfootgeometry = new THREE.CylinderGeometry( 1, 1, 6, 32 );
+            var rightfootmaterial = new THREE.MeshPhongMaterial( {color: 0xf4a460} );
+            var rightfootcylinder = new THREE.Mesh( rightfootgeometry, rightfootmaterial );
+            scene.add( rightfootcylinder );
+            rightfootcylinder.position.x = -18.5;
+            rightfootcylinder.position.y =-18;
+            rightfootcylinder.position.z =-15;
+            rightfootcylinder.castShadow = true;
+
+
+
+
+            //leftfoot
+            var leftfootgeometry = new THREE.CylinderGeometry( 1, 1, 6, 32 );
+            var leftfootmaterial = new THREE.MeshPhongMaterial( {color: 0xf4a460} );
+            var leftfootcylinder = new THREE.Mesh( leftfootgeometry, leftfootmaterial );
+            scene.add( leftfootcylinder );
+            leftfootcylinder.position.x = -21.5;
+            leftfootcylinder.position.y =-18;
+            leftfootcylinder.position.z =-15;
+            leftfootcylinder.castShadow = true;
+
+
+
+            //sun
+            var sungeometry = new THREE.SphereGeometry(2.5,20,32);
+            var sunmaterial = new THREE.MeshBasicMaterial( {color: 0xCCCC00} );
+            var sun = new THREE.Mesh( sungeometry, sunmaterial );
+            scene.add( sun );
+			sun.position.x = 50;
+			sun.position.y = 15;
+			sun.position.z = -20;
+
+			//cloud1
+            var cloud1geometry = new THREE.SphereGeometry(4,20,32);
+            var cloud1material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+            var cloud1 = new THREE.Mesh( cloud1geometry, cloud1material );
+            scene.add( cloud1 );
+			cloud1.position.x = 35;
+			cloud1.position.y = 18;
+			cloud1.position.z = -25;
+			group.add(cloud1);
+
+			//cloud2
+            var cloud2geometry = new THREE.SphereGeometry(4,20,32);
+            var cloud2material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+            var cloud2 = new THREE.Mesh( cloud2geometry, cloud2material );
+            scene.add( cloud2 );
+			cloud2.position.x = 32;
+			cloud2.position.y = 19.5;
+			cloud2.position.z = -25;
+            group.add(cloud2);
+
+
+			//cloud3
+            var cloud3geometry = new THREE.SphereGeometry(4,20,32);
+            var cloud3material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+            var cloud3 = new THREE.Mesh( cloud3geometry, cloud3material );
+            scene.add( cloud3 );
+			cloud3.position.x = 28;
+			cloud3.position.y = 19.5;
+			cloud3.position.z = -25;
+			group.add(cloud3);
+
+
+			//cloud4
+            var cloud4geometry = new THREE.SphereGeometry(4,20,32);
+            var cloud4material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+            var cloud4 = new THREE.Mesh( cloud4geometry, cloud4material );
+            scene.add( cloud4 );
+			cloud4.position.x = 24;
+			cloud4.position.y = 19.5;
+			cloud4.position.z = -25;
+			group.add(cloud4);
+
+
+			//cloud5
+            var cloud5geometry = new THREE.SphereGeometry(4,20,32);
+            var cloud5material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+            var cloud5 = new THREE.Mesh( cloud5geometry, cloud5material );
+            scene.add( cloud5 );
+			cloud5.position.x = 20;
+			cloud5.position.y = 19.5;
+			cloud5.position.z = -25;
+			group.add(cloud5);
+
+
+			//cloud6
+            var cloud6geometry = new THREE.SphereGeometry(4,20,32);
+            var cloud6material = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+            var cloud6 = new THREE.Mesh( cloud6geometry, cloud6material );
+            scene.add( cloud6 );
+			cloud6.position.x = 16;
+			cloud6.position.y = 18;
+			cloud6.position.z = -25;
+			group.add(cloud6);
+
+
+
+
+
+            // tween
+             var target = {x: -50, y: 0, z:0};
+            var tween = new TWEEN.Tween(group.position).to(target, 2000);
+            tween.delay(100);
+            tween.repeat(Infinity);
+            tween.yoyo(true);
+            tween.start();
+
+
+
+
+
+
+
+            //animate
+			var animate = function () {
+				requestAnimationFrame( animate );
+				renderer.render( scene, camera );
+
+
+                TWEEN.update();
+                // headsphere.rotation.y += 0.1;
+
+			};
+
+			camera.position.z =30;
+            camera.position.y = -8;
+
+			animate();
+
+
+
+		</script>
+
+
+
+</body>
+</html>

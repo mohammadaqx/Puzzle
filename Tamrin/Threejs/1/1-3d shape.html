@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skeleton</title>
+    <script type="text/javascript" src="lib/three.js"></script>
+    <style>
+        body {
+            /* set margin to 0 and overflow to hidden, to go fullScreen */
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Div which will hold the Output -->
+<div id="WebGL-output">
+</div>
+
+<script type="text/javascript" src="lib/three.js"></script>
+<script type="text/javascript" src="lib/OrbitControls.js"></script>
+<script type="text/javascript" src="lib/ShadowMapViewer.js"></script>
+<script type="text/javascript" src="lib/OBJLoader.js"></script>
+<script src="lib/TransformControls.js"></script>
+
+        <script>
+    var scene, camera, renderer;
+    var controls ;
+    var mesh;
+    var sound;
+    var listener;
+    var audioLoader;
+
+    init();
+    animate();
+
+    var listener; var audioloader;
+    // once everything is loaded, we run our Three.js stuff.
+    function init() {
+
+        // create a scene, that will hold all our elements such as objects, cameras and lights.
+        scene = new THREE.Scene();
+
+        // create a camera, which defines where we're looking at.
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        // create a render and set the size
+        renderer = new THREE.WebGLRenderer({antialias: true});
+		
+            renderer.shadowMap.enabled = true;
+			renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
+        renderer.setClearColor(new THREE.Color(0x0aa5ad));
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+		scene.fog = new THREE.Fog(0xc5d7a8, 10,550);
+
+        listener = new THREE.AudioListener();
+        camera.add( listener );
+
+        // create a global audio source
+        sound = new THREE.Audio( listener );
+        audioLoader = new THREE.AudioLoader();
+
+        var light = new THREE.PointLight( 0x02c6c6 ,9, 100 ); // soft white light
+        light.position.set(50 , 50 , 50);
+		light.castShadow = true;
+        scene.add( light );
+
+        //CUBE
+        var texture = new THREE.TextureLoader().load( 'texture/3.jpg' );
+        var geometry = new THREE.BoxBufferGeometry( 40, 40, 40 );
+        var material = new THREE.MeshPhongMaterial( {map: texture} );
+        mesh = new THREE.Mesh( geometry, material );
+		mesh.castShadow = true; //default is false
+        scene.add( mesh );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        document.body.appendChild( renderer.domElement );
+        window.addEventListener( 'resize', onWindowResize, false );
+        document.addEventListener("keydown" , keydowntextfield, false);
+
+
+
+
+        uniforms = {
+           time: {value: 1.0},
+           resolution: {value: new THREE.Vector2()}
+        };
+
+        //position
+        camera.position.set(35,90,-300);
+        camera.lookAt(new THREE.Vector3(-35,60.0));
+        document.getElementById("WebGL-output").appendChild(renderer.domElement);
+        controls = new THREE.OrbitControls( camera, renderer.domElement);
+        controls.enableDamping = false;
+        controls.dampingFactor = 0.25;
+        controls.enableZoom = false;
+		
+		var objectLoader2 = new THREE.ObjectLoader();
+    objectLoader2.load("model/plane-fight-threejs/plane-fight.json", function (obj) {
+//                var obj3 = obj.clone();
+
+        obj.position.y = 50;
+        obj.position.x = 50;
+        obj.position.z = 50;
+        scene.add(obj);
+        objectLoader2.castShadow = true;
+
+    });
+	
+	var ball = new THREE.ObjectLoader();
+    ball.load("model/ball/football-soccer-ball.json", function (obj2) {
+        obj2.traverse(function (mesh) {
+            if (mesh instanceof THREE.Mesh) {
+
+                objects.push(mesh);
+            }
+            obj2.position.y = 20;
+            obj2.position.z = 30;
+            obj2.position.x = -85;
+            obj2.scale.set(0.2, 0.2, 0.2);
+            scene.add(obj2);
+
+        });
+    });
+
+        //Surface
+        var surfaceGeometry = new THREE.PlaneGeometry(300,350);
+        var surfaceMaterial = new THREE.MeshBasicMaterial({color:0xbab6b9, side: THREE.DoubleSide});
+        var surfaceMesh = new THREE.Mesh(surfaceGeometry, surfaceMaterial);
+        surfaceMesh.rotateX(Math.PI / 5);
+        surfaceMesh.position.y = -50;
+		surfaceMesh.receiveShadow=true;
+        scene.add(surfaceMesh);
+
+
+
+        // position and point the camera to the center of the scene
+        camera.position.set(-1,0,-200);
+        camera.lookAt(scene.position);
+
+        // add the output of the renderer to the html element
+        document.getElementById("WebGL-output").appendChild(renderer.domElement);
+
+
+    }
+    
+   function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+
+    function keydowntextfield(e){
+
+        var keycode= e.keyCode;
+        if (keycode==37) {
+            mesh.scale.x *= 2;
+            console.log('test');
+            audioLoader.load( 'soundx.mp3', function( buffer ) {
+                sound.setBuffer( buffer );
+                sound.setVolume( 0.5 );
+                sound.play();
+            });
+        }
+
+        if (keycode==39) {
+            mesh.scale.x /= 2;
+            //mesh.position.x -= 1;
+        }
+        if (keycode==71) {
+            camera.position.set(35,90,-900);
+        }
+       else if (keycode==38) {
+            mesh.scale.y *= 2;
+        }
+       else if (keycode==40) {
+            mesh.scale.y /= 2;
+        }
+
+    }
+
+    function animate() {
+
+        // render the scene
+        requestAnimationFrame( animate );
+        renderer.render(scene, camera);
+
+        var t =(Date.now()/1000);
+        controls.update();
+        uniforms.time.value +=1;
+
+        mesh.rotation.x += (5 *  Math.PI) / 180 ;
+
+        mesh.rotation.y += (5 * Math.PI) / 180;
+
+
+
+    }
+
+</script>
+</body>
+</html>
